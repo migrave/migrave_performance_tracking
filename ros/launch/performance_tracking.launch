@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="migrave_performance_tracking" type="performance_tracking" name="performance_tracking" output="screen">
+        <!--<param name="action_topic" type="str" value="/robot_action" />-->
+    </node>
+</launch>
