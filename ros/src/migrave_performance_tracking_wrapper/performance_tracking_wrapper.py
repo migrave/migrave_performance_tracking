@@ -1,5 +1,6 @@
 import rospy
 
+from typing import Dict
 from migrave_performance_tracking.performance_tracking import RobotPerformanceTracking
 from migrave_ros_msgs.msg import GamePerformance, GameActivity
 
@@ -35,4 +36,7 @@ class PerformanceTrackingWrapper(object):
             rospy.sleep(1)
             
             self.can_receive_new_feedback = True
-            
+
+    def get_latest_performance_record(self) -> Dict:
+        'Function to fetch latest performance record'
+        return self.game_performance_tracker.get_latest_performance_record()

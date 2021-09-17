@@ -8,16 +8,16 @@ class RobotPerformanceTracking(object):
     """Main component for tracking the child performance
     """
     def __init__(self):
-        pass
+        self.current_performance = {}
 
     def save_performance_record(self, performance_record: Dict) -> None:
         'Function to save single performance record in the database'
-        rospy.loginfo('Saved performance record \n :{}'.format(performance_record))
+        self.current_performance = performance_record
         pass
 
     def get_latest_performance_record(self) -> Dict:
         'Function to fetch latest performance record'
-        return {}
+        return self.current_performance
 
     def get_performance(self, child_name: str='', game_id: int=-1) -> Dict:
         """
