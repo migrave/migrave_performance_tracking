@@ -6,8 +6,6 @@ if __name__ == '__main__':
     rospy.init_node('game_performance_tracking')
     performance_tracking = PerformanceTrackingWrapper()
     try:
-        while not rospy.is_shutdown():
-            performance_tracking.act()
-            rospy.sleep(5)
+        rospy.spin()
     except rospy.ROSInterruptException as exc:
         print('performance_tracking ...')
