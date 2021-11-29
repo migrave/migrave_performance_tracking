@@ -1,6 +1,6 @@
 import rospy
 
-from typing import Dict
+from typing import Dict, List
 from migrave_performance_tracking.performance_tracking import RobotPerformanceTracking
 from migrave_ros_msgs.msg import GamePerformance, GameActivity
 
@@ -40,3 +40,7 @@ class PerformanceTrackingWrapper(object):
     def get_latest_performance_record(self) -> Dict:
         'Function to fetch latest performance record'
         return self.game_performance_tracker.get_latest_performance_record()
+    
+    def get_performance_record(self, child_name: str='', game_id: int=None) -> List[Dict]:
+        'Function to fetch latest performance record'
+        return self.game_performance_tracker.get_performance_record(child_name=child_name, game_id=game_id)
